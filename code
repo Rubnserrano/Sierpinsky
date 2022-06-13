@@ -1,0 +1,54 @@
+#piramide de serpinsky
+
+#3 numeros al azar
+x=c(1,-2,5,-1)
+y=c(0,-2,1,4)
+plot(x,y, xlim=c(-5,5), ylim=c(-5,5))
+abline(h=0, col=2)
+abline(v=0, col=2)
+
+iteraciones=10000
+
+for(i in 1:iteraciones){
+  random=sample(c(2,3,4),1)
+  if(i==1){
+    x[4+i]=(x[1]+x[random])/2
+    y[4+i]=(y[1]+y[random])/2
+  }else{
+  x[4+i]=(x[(4+i-1)]+x[random])/2
+  y[4+i]=(y[(4+i-1)]+y[random])/2
+  }
+}
+plot(x,y, xlim=c(-5,5), ylim=c(-5,5))
+abline(h=0, col=2)
+abline(v=0, col=2)
+x[10]
+
+#triangulo de sierpinsky ampliado
+x=c(1,-2,5,-1)
+y=c(0,-2,1,4)
+plot(x,y, xlim=c(-1,1), ylim=c(-1,1))
+abline(h=0, col=2)
+abline(v=0, col=2)
+
+iteraciones=10000
+
+for(i in 1:iteraciones){
+  random=sample(c(2,3,4),1)
+  if(i==1){
+    x[4+i]=(x[1]+x[random])/2
+    y[4+i]=(y[1]+y[random])/2
+  }else{
+    x[4+i]=(x[(4+i-1)]+x[random])/2
+    y[4+i]=(y[(4+i-1)]+y[random])/2
+  }
+}
+plot(x,y, xlim=c(-1,1), ylim=c(-1,1))
+abline(h=0, col=2)
+abline(v=0, col=2)
+x[10]
+
+
+
+
+
